@@ -1,0 +1,18 @@
+{
+  "name": "100-hours-project",
+  "version": "1.0.0",
+  "description": "An OSRS highscores tracker for my 100 hours project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "daisyui": "^2.31.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-router": "^0.0.1",
+    "osrs-json-hiscores": "^2.10.0"
+  }
+}
