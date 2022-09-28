@@ -1,12 +1,29 @@
 <%- include('partials/header') -%>
-<form action="/stats" method="GET">
+<form action="/stats" method="GET" id="rsn-submit">
 <div class="form-control w-full max-w-xs">
     <label class="label">
       <span class="label-text">Input RSN</span>
-      <input type="text" placeholder="Username" class="input input-bordered w-full max-w-xs" />
+      <input type="text" placeholder="Username" name="rsn" class="input input-bordered w-full max-w-xs" id="rsn"/>
     </label>
   </div>
 
 </form>
+<script type="text/javascript">
+  var form       = document.querySelector('#rsn-submit'),
+      text_field = document.querySelector('#rsn');
+
+  function submitHandler(){
+    // build the new url and redirect
+    var url = form.action + '/' + text_field.value;
+    window.location.replace(url);
+
+    // prevent form from being submitted because we already 
+    // called the request in a new window
+    return false;
+  }
+
+  // attach custom submit handler
+  form.onsubmit = submitHandler;
+</script>
 
 <%- include('partials/footer') -%>

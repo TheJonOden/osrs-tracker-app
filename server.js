@@ -14,14 +14,15 @@ app.use((req, res, next) => {
   next();
 });
 
-// app.get("/stats/:rsn", (req, res) => {
-//   hiscores
-//     .getStatsByGamemode(req.params.rsn)
-//     .then((response) => res.send(response))
-//     .catch((err) => {
-//       res.status(404).send({ status: 404, error: err });
-//     });
-// });
+app.get("/stats/:rsn", (req, res) => {
+  hiscores
+    .getStatsByGamemode(req.params.rsn)
+    .then((response) => res.json(response))
+    .catch((err) => {
+      res.status(404).send({ status: 404, error: err });
+    });
+    
+});
 
 app.use("/", mainRoutes);
 app.use("/stats", statRoute);
